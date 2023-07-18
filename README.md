@@ -1,4 +1,4 @@
 # Readme
 
-This solution required local SQL server database.
+This solution requires local SQL server database.
 Demonstrate MVC CRUD Operations

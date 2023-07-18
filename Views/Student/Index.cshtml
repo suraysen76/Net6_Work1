@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Student>
+<div class="text-center">
+    <h1 class="display-4">Student Page</h1>
+    <table class="table-bordered table-striped" style="width:100%">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>enroll Date</th>
+        </tr>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>@obj.FirstMidName</td>
+                <td>@obj.LastName</td>
+                <td>@obj.EnrollmentDate.ToString("dd/MM/yy");</td>
+            </tr>
+        }
+    </table>
+</div>

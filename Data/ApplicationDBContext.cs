@@ -11,6 +11,7 @@ namespace Net6_Work1.Data
                 
         }
 
-        public DbSet<Category> Categories { get; set; }      
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Student> Students { get; set; }
     }
 }

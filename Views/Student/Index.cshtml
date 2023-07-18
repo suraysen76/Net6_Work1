@@ -1,18 +1,29 @@
 ﻿@model IEnumerable<Student>
 <div class="text-center">
     <h1 class="display-4">Student Page</h1>
+    <div class="col mb-3">
+        <a asp-controller="Student" asp-action="Create" class="btn btn-lg btn-primary"><i class="bi bi-file-plus-fill"></i>Add Student</a>
+    </div>
     <table class="table-bordered table-striped" style="width:100%">
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>enroll Date</th>
+            <th>Enroll Date</th>
+            <th>Action</th>
         </tr>
         @foreach (var obj in Model)
         {
             <tr>
                 <td>@obj.FirstMidName</td>
                 <td>@obj.LastName</td>
-                <td>@obj.EnrollmentDate.ToString("dd/MM/yy");</td>
+                <td>@obj.EnrollmentDate.ToString("dd/MM/yy")</td>
+                                        <td>
+                        <div role="group" class="w-60 btn-group">
+                                <a asp-controller="Student" asp-action="Edit" asp-route-id="@obj.ID" class=" btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i>Edit</a>&nbsp;
+                                <a asp-controller="Student" asp-action="Delete" asp-route-id="@obj.ID" class="btn btn-sm btn-danger"><i class="bi bi-trash-fill"></i>Delete</a>
+                            </div>
+                        </td>
+
             </tr>
         }
     </table>

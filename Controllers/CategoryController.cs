@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Net6_Work1.Data;
 using Net6_Work1.Models;
 
@@ -12,9 +13,9 @@ namespace Net6_Work1.Controllers
             _db= db;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            IEnumerable<Category> listModel = _db.Categories;
+            var  listModel = await _db.Categories.ToListAsync();
             return View(listModel);
         }
     }
